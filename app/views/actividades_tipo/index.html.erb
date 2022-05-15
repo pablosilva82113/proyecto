@@ -1,0 +1,32 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Actividad tipos</h1>
+<table class="table table-striped table-hover">
+      <thead>
+          <tr>
+              <th>Tipo</th>
+              <th>Ver actividad tipo</th>
+              <th></th>
+          </tr>
+      </thead>
+
+      <tbody>
+          <% @actividades_tipo.each do |at| %>
+          <tr>
+              <td><%= at[:tipo] %></td>
+              <td><%= link_to "Ver actividad tipo", at %></td>
+          </tr>
+          <% end %>
+          </tbody>
+          </table>
+          
+<div id="actividades_tipo">
+  <% @actividades_tipo.each do |actividad_tipo| %>
+    <%= render actividad_tipo %>
+    <p>
+      <%= link_to "Show this actividad tipo", actividad_tipo %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New actividad tipo", new_actividad_tipo_path %>

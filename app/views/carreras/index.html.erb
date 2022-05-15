@@ -1,0 +1,34 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Carreras</h1>
+
+<table class="table table-striped table-hover">
+<thead>
+        <tr>
+           <th>Siglas</th>
+           <th>Carrera</th>
+            <th>Ver carrera</th>
+    </tr>
+   </thead>
+
+    <tbody>
+        <% @carreras.each do |c| %>
+        <tr>
+            <td><%= c[:siglas] %></td>
+            <td><%= c[:carrera] %></td>
+            <td><%= link_to "Ver carreara", c %></td>
+        </tr>
+        <% end %>
+        </tbody>
+        </table>
+
+<div id="carreras">
+  <% @carreras.each do |carrera| %>
+    <%= render carrera %>
+    <p>
+      <%= link_to "Show this carrera", carrera %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New carrera", new_carrera_path %>

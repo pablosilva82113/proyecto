@@ -1,0 +1,40 @@
+<%= form_with(model: actividad) do |form| %>
+  <% if actividad.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(actividad.errors.count, "error") %> prohibited this actividad from being saved:</h2>
+
+      <ul>
+        <% actividad.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :tipo_id, style: "display: block" %>
+    <%= form.number_field :tipo_id %>
+    <-!
+    <%= collection_select("actividad" , :tipo_id, ActividadTipo.all.order("id"), :id, :tipo) %>
+
+    -->
+  </div>
+
+  <div>
+    <%= form.label :docente_id, style: "display: block" %>
+    <%= form.number_field :docente_id %>
+    <-!
+    <%= collection_select("activiad", :docente_id, Docente.all.order("id"), :id, :nombre) %>
+
+    -->
+  </div>
+
+  <div>
+    <%= form.label :descripcion, style: "display: block" %>
+    <%= form.text_area :descripcion %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

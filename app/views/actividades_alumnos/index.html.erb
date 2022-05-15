@@ -1,0 +1,40 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Actividades alumnos</h1>
+
+<table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Actividad_id</th>
+        <th>Alumno_id</th>
+        <th>Calificacion</th>
+        <th>Observaciones</th>
+        <th>Ver actividades alumno</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @actividades_alumnos.each do |aa| %>
+      <tr>
+        <td><%= aa[:actividad_id] %></td>
+        <td><%= aa[:alumno_id] %></td>
+        <td><%= aa[:calificacion] %></td>
+        <td><%= aa[:observaciones] %></td>
+        <td><%= link_to "Ver actividades alumno", aa %></td>
+      </tr>
+      <% end %>
+      </tbody>
+      </table>
+      
+
+<div id="actividades_alumnos">
+  <% @actividades_alumnos.each do |actividades_alumno| %>
+    <%= render actividades_alumno %>
+    <p>
+      <%= link_to "Show this actividades alumno", actividades_alumno %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New actividades alumno", new_actividades_alumno_path %>

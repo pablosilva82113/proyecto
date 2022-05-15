@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  carrera_id: 1
+  user_id: 1
+  no_control: 1
+  semestre: 1
+  nombre: MyString
+  apellido_p: MyString
+  apellido_m: MyString
+
+two:
+  carrera_id: 1
+  user_id: 1
+  no_control: 1
+  semestre: 1
+  nombre: MyString
+  apellido_p: MyString
+  apellido_m: MyString

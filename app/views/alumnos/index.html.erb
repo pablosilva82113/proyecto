@@ -1,0 +1,46 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Alumnos</h1>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th  >Carrera</th>
+            <th>Usuario</th>
+            <th>No_Control</th>
+            <th>Semestre</th>
+            <th>Nombre</th>
+            <th>Apellido_P</th>
+            <th>Apellido_M</th>
+            <th>Ver alumno</th>
+            <th></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <% @alumnos.each do |a| %>
+        <tr>
+            
+            <td><%= a[:carrera_id] %></td>
+            <td><%= a[:user_id] %></td>
+            <td><%= a[:no_control] %></td>
+            <td><%= a[:semestre] %></td>
+            <td><%= a[:nombre] %></td>
+            <td><%= a[:apellido_p] %></td>
+            <td><%= a[:apellido_m] %></td>
+            <td><%= link_to "Ver alumno", a %></td>
+      </tr> 
+      <% end %>
+      </tbody>
+      </table>
+
+<div id="alumnos">
+  <% @alumnos.each do |alumno| %>
+    <%= render alumno %>
+    <p>
+      <%= link_to "Show this alumno", alumno %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New alumno", new_alumno_path %>

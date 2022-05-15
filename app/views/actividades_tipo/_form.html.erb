@@ -1,0 +1,22 @@
+<%= form_with(model: actividad_tipo) do |form| %>
+  <% if actividad_tipo.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(actividad_tipo.errors.count, "error") %> prohibited this actividad_tipo from being saved:</h2>
+
+      <ul>
+        <% actividad_tipo.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :tipo, style: "display: block" %>
+    <%= form.text_field :tipo %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

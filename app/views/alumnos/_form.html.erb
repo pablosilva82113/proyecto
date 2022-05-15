@@ -1,0 +1,58 @@
+<%= form_with(model: alumno) do |form| %>
+  <% if alumno.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(alumno.errors.count, "error") %> prohibited this alumno from being saved:</h2>
+
+      <ul>
+        <% alumno.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :carrera_id, style: "display: block" %>
+    <%= form.number_field :carrera_id %>
+    <!--
+    <%= collection_select("alumnos" , :carrera_id, Carrera.all, :id, :siglas) %>
+    -->
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.number_field :user_id %>
+    <!--
+    <%= collection_select("alumnos" , :user_id, User.all.order("id"), :id,:email) %>
+      -->
+  </div>
+
+  <div>
+    <%= form.label :no_control, style: "display: block" %>
+    <%= form.number_field :no_control %>
+  </div>
+
+  <div>
+    <%= form.label :semestre, style: "display: block" %>
+    <%= form.number_field :semestre %>
+  </div>
+
+  <div>
+    <%= form.label :nombre, style: "display: block" %>
+    <%= form.text_field :nombre %>
+  </div>
+
+  <div>
+    <%= form.label :apellido_p, style: "display: block" %>
+    <%= form.text_field :apellido_p %>
+  </div>
+
+  <div>
+    <%= form.label :apellido_m, style: "display: block" %>
+    <%= form.text_field :apellido_m %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

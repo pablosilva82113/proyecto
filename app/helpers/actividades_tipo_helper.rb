@@ -1,0 +1,2 @@
+module ActividadesTipoHelper
+end

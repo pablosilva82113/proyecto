@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @carrera %>
+
+<div>
+  <%= link_to "Edit this carrera", edit_carrera_path(@carrera) %> |
+  <%= link_to "Back to carreras", carreras_path %>
+
+  <%= button_to "Destroy this carrera", @carrera, method: :delete %>
+</div>

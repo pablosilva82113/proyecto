@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @actividad_tipo %>
+
+<div>
+  <%= link_to "Edit this actividad tipo", edit_actividad_tipo_path(@actividad_tipo) %> |
+  <%= link_to "Back to actividad tipos", actividades_tipo_path %>
+
+  <%= button_to "Destroy this actividad tipo", @actividad_tipo, method: :delete %>
+</div>
