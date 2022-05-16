@@ -13,22 +13,18 @@
 
   <div>
     <%= form.label :actividad_id, style: "display: block" %>
-    <%= form.number_field :actividad_id %>
-    <-!
-   <div class = "col-3">
-   <%= form.label "Actividad" %> 
-   <br>
-   <%= collection_select("actividades_alumno", :actividad_id, Actividad.all, :id, :tipo_id) %>
-   </div>
+    
+    <%= collection_select("actividades_alumno", :actividad_id, Actividad.all, :id, :tipo_id) %>
+    <!--
+   <%= form.number_field :actividad_id %>
     -->
   </div>
 
   <div>
     <%= form.label :alumno_id, style: "display: block" %>
+    <%= collection_select("actividades_alumno", :alumno_id, Alumno.all, :id, :no_control) %>
+    <!--
     <%= form.number_field :alumno_id %>
-    <-!
-    <%= collection_select("alumno", :alumno_id, Alumno.all, :no_control, :id) %>
- 
     -->
   </div>
 

@@ -13,11 +13,11 @@
 
   <div>
     <%= form.label :user_id, style: "display: block" %>
+    
+    <%= collection_select("docente" , :user_id, User.all, :id,:email) %>
+    <!--
     <%= form.number_field :user_id %>
-    <-!
-    <%= collection_select("docentes" , :user_id, User.all.order("id"), :id,email) %>
- 
-    -->
+   -->
   </div>
 
   <div>

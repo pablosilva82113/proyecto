@@ -17,6 +17,7 @@ class ActividadesTest < ApplicationSystemTestCase
     fill_in "Descripcion", with: @actividad.descripcion
     fill_in "Docente", with: @actividad.docente_id
     fill_in "Tipo", with: @actividad.tipo_id
+    fill_in "Titulo", with: @actividad.titulo
     click_on "Create Actividad"
 
     assert_text "Actividad was successfully created"
@@ -30,6 +31,7 @@ class ActividadesTest < ApplicationSystemTestCase
     fill_in "Descripcion", with: @actividad.descripcion
     fill_in "Docente", with: @actividad.docente_id
     fill_in "Tipo", with: @actividad.tipo_id
+    fill_in "Titulo", with: @actividad.titulo
     click_on "Update Actividad"
 
     assert_text "Actividad was successfully updated"

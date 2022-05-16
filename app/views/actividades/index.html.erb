@@ -1,36 +1,32 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Actividades</h1>
-
 <table class="table table-striped table-hover">
-    <thead>
-        <tr>
-            <th>tipo_id</th>
-            <th>docente_id</th>
-            <th>descripcion</th>
-            <th>Ver alumno</th>
-            <th>Nuevo</th>
-            <th></th>
-        </tr>
-    </thead>
-
-    <tbody>
-        <% @actividades.each do |a| %>
-        <tr>
-            <td><%= a[:tipo_id] %></td>
-            <td><%= a[:docente_id] %></td>
-            <td><%= a[:descripcion] %></td>
-            <td><%= link_to "Ver actividad", a %></td>
-          <td> <%= link_to "New actividad", new_actividad_path %></td>
-       
-        </tr>
-        <% end %>
-        </tbody>
-        </table>
-
-
-
-
+  <thead>
+    <tr>
+    <th>tipo_id</th>
+    <th>docente_id</th>
+    <th>titulo</th>
+    <th>descripcion</th>
+    <th>Ver actividad</th>
+    <th>Nuevo</th>
+    <th></th>
+    </tr>
+</thead>
+<tbody>
+  <% @actividades.each do |a| %>
+    <tr>
+      <td><%= a.tipo_id %></td>
+      <td><%= a.docente_id %></td>
+      <td><%= a.titulo %></td>
+      <td><%= a.descripcion %></td>
+      <td><%= link_to "Ver actividad", a %></td>
+      <td> <%= link_to "New actividad", new_actividad_path %></td>
+   
+    </tr>
+    <% end %>
+    </tbody>
+    </table>
 
 <div id="actividades">
   <% @actividades.each do |actividad| %>

@@ -1,12 +1,19 @@
 <div id="<%= dom_id alumno %>">
   <p>
     <strong>Carrera:</strong>
-    <%= alumno.carrera_id %>
+    <%= alumno.Carrera[:carrera] %>
+    <!--
+    <%= alumno.carrera_id %> 
+    -->
+    
   </p>
 
   <p>
     <strong>User:</strong>
+    <%= alumno.User[:email] %>
+    <!--
     <%= alumno.user_id %>
+    -->
   </p>
 
   <p>

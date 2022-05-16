@@ -13,17 +13,19 @@
 
   <div>
     <%= form.label :carrera_id, style: "display: block" %>
-    <%= form.number_field :carrera_id %>
+    
+    <%= collection_select("alumno" , :carrera_id, Carrera.all, :id, :siglas) %>
     <!--
-    <%= collection_select("alumnos" , :carrera_id, Carrera.all, :id, :siglas) %>
+    <%= form.number_field :carrera_id %>
     -->
   </div>
 
   <div>
     <%= form.label :user_id, style: "display: block" %>
-    <%= form.number_field :user_id %>
+    
+    <%= collection_select("alumno" , :user_id, User.all, :id,:email) %>
     <!--
-    <%= collection_select("alumnos" , :user_id, User.all.order("id"), :id,:email) %>
+    <%= form.number_field :user_id %>
       -->
   </div>
 

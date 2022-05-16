@@ -1,12 +1,23 @@
 <div id="<%= dom_id actividad %>">
   <p>
     <strong>Tipo:</strong>
+    <%= actividad.ActividadTipo[:tipo] %>
+    <!--
     <%= actividad.tipo_id %>
+    -->
   </p>
 
   <p>
     <strong>Docente:</strong>
+    <%= actividad.Docente[:nombre] %>
+    <!--
     <%= actividad.docente_id %>
+    -->
+  </p>
+
+  <p>
+    <strong>Titulo:</strong>
+    <%= actividad.titulo %>
   </p>
 
   <p>

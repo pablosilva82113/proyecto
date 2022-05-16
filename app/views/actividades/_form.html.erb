@@ -13,20 +13,27 @@
 
   <div>
     <%= form.label :tipo_id, style: "display: block" %>
+   
+    <%= collection_select("actividad" , :tipo_id, ActividadTipo.all, :id, :tipo) %>
+    <!-- 
     <%= form.number_field :tipo_id %>
-    <-!
-    <%= collection_select("actividad" , :tipo_id, ActividadTipo.all.order("id"), :id, :tipo) %>
-
     -->
   </div>
 
   <div>
     <%= form.label :docente_id, style: "display: block" %>
+    
+    <%= collection_select("activiad", :docente_id, Docente.all, :id, :nombre) %>
+    <!--
+    
     <%= form.number_field :docente_id %>
-    <-!
-    <%= collection_select("activiad", :docente_id, Docente.all.order("id"), :id, :nombre) %>
-
+    
     -->
+  </div>
+
+  <div>
+    <%= form.label :titulo, style: "display: block" %>
+    <%= form.text_field :titulo %>
   </div>
 
   <div>

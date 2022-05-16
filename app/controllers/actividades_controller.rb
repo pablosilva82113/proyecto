@@ -65,6 +65,6 @@ class ActividadesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def actividad_params
-      params.require(:actividad).permit(:tipo_id, :docente_id, :descripcion)
+      params.require(:actividad).permit(:tipo_id, :docente_id, :titulo, :descripcion)
     end
 end

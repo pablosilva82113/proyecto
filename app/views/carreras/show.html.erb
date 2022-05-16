@@ -3,8 +3,9 @@
 <%= render @carrera %>
 
 <div>
-  <%= link_to "Edit this carrera", edit_carrera_path(@carrera) %> |
+<button type="button" class="btn btn-dark">
+  <%= link_to "Edit this carrera", edit_carrera_path(@carrera) %>  </button>|
   <%= link_to "Back to carreras", carreras_path %>
-
+ 
   <%= button_to "Destroy this carrera", @carrera, method: :delete %>
 </div>

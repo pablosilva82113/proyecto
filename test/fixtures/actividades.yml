@@ -3,9 +3,11 @@
 one:
   tipo_id: 1
   docente_id: 1
+  titulo: MyString
   descripcion: MyText
 
 two:
   tipo_id: 1
   docente_id: 1
+  titulo: MyString
   descripcion: MyText

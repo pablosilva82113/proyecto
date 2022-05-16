@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  resources :actividades
   get 'index/index'
   devise_for :users
   resources :docentes
-  resources :actividades
   resources :actividades_tipo
   resources :actividades_alumnos
   resources :carreras
