@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Municipios</h1>
+<button type="button" class="btn btn-info">
+<%= link_to "New municipio", new_municipio_path %>
+</button>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+     <th>Id</th>
+     <th>Nombre</th>
+     <th>Ver municipio</th>
+    </tr>
+    </thead>
+  <tbody>
+  <% @municipios.each do |m| %>
+    <tr>
+    <td><%= m[:id] %></td>
+    <td><%= m[:nombre_m] %></td>
+   <td><button type="button" class="btn btn-info"><%= link_to "Show this municipio", m %></button></td>
+   </tr>
+    <% end %>
+  </tbody>
+
+

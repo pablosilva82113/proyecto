@@ -10,6 +10,11 @@
 #   inflect.uncountable %w( fish sheep )
   inflect.irregular "actividad", "actividades"
   inflect.irregular "actividad_tipo", "actividades_tipo"
+  inflect.irregular "direccion", "direcciones"
+  inflect.irregular "especialidad", "especialidades"
+  inflect.irregular "municipio", "municipios"
+  inflect.irregular "estado", "estados"
+  inflect.irregular "colonia", "colonias"
   
  end
 

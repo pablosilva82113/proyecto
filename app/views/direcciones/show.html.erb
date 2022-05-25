@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Direcciones</h1>
+
+<%= render @direccion %>
+
+<div>
+<button type="button" class="btn btn-info">
+  <%= link_to "Editar  direccion", edit_direccion_path(@direccion) %></button> |
+  
+  <button type="button" class="btn btn-info">
+  <%= link_to "Regresar a direcciones", direcciones_path %>
+  </button>
+  
+ <%=  button_to "Eliminar direccion", @direccion, method: :delete %> 
+</div>
+

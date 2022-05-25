@@ -14,7 +14,7 @@
   <div>
     <%= form.label :tipo_id, style: "display: block" %>
    
-    <%= collection_select("actividad" , :tipo_id, ActividadTipo.all, :id, :tipo) %>
+    <%= collection_select("actividadtipo" , :tipo_id, ActividadTipo.all.order("tipo"), :id, :tipo) %>
     <!-- 
     <%= form.number_field :tipo_id %>
     -->
@@ -23,7 +23,7 @@
   <div>
     <%= form.label :docente_id, style: "display: block" %>
     
-    <%= collection_select("activiad", :docente_id, Docente.all, :id, :nombre) %>
+    <%= collection_select("docente", :docente_id, Docente.all.order("nombre"), :id, :nombre) %>
     <!--
     
     <%= form.number_field :docente_id %>

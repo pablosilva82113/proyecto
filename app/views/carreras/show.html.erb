@@ -1,11 +1,45 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @carrera %>
 
-<div>
-<button type="button" class="btn btn-dark">
-  <%= link_to "Edit this carrera", edit_carrera_path(@carrera) %>  </button>|
-  <%= link_to "Back to carreras", carreras_path %>
- 
-  <%= button_to "Destroy this carrera", @carrera, method: :delete %>
-</div>
+<h2>Carreras<%=@carrera.Alumnos.count %> </h2>
+<button type="button" class="btn btn-dark" ><%= link_to "Back to carreras", carreras_path %></button>
+<table class="table table-striped table-hover">
+ <thead>
+    <tr>
+      <th>id</th>
+      <th>Especialidad</th>
+      <th>Carrera</th>
+      <th>Usuario</th>
+      <th>No_Control</th>
+      <th>Semestre</th>
+      <th>Nombre</th>
+      <th>Apellido_P</th>
+      <th>Apellido_M</th>
+      <th>Editar carrera</th>
+      <th>Eliminar </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @carrera.Alumnos.each do |a| %>
+    <tr>
+      <td><%= a[:id] %></td>
+      <td><%= a.Especialidad[:nombre_especialidad] %></td>
+      <td><%= a.Carrera[:carrera] %></td>
+      <td><%= a.User[:email] %></td>
+      <td><%= a[:no_control] %></td>
+      <td><%= a[:semestre] %></td>
+      <td><%= a[:nombre] %></td>
+      <td><%= a[:apellido_p] %></td>
+      <td><%= a[:apellido_m] %></td>
+      <td><button type="button" ><%= link_to "Edit this carrera", edit_carrera_path(@carrera) %>  </button></td>
+      <td><%= button_to "Destroy this carrera", @carrera, method: :delete %></td> 
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+

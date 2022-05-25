@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Estados</h1>
+<button type="button" class="btn btn-info">
+<%= link_to "New estado", new_estado_path %>
+</button>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Ver estado</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @estados.each do |e| %>
+      <tr>
+       <td><%= e[:id] %></td>
+      <td><%= e[:nombre_e] %></td>
+      <td><button type="button" class="btn btn-info"> <%= link_to "Show this estado", e %></button></td>
+
+      </tr>
+      <% end %>
+    </tbody>
+
+
+

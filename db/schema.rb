@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_15_202243) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_23_230326) do
   create_table "actividades", force: :cascade do |t|
     t.integer "tipo_id"
     t.integer "docente_id"
@@ -45,6 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_15_202243) do
     t.string "apellido_m"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "especialidad_id"
   end
 
   create_table "carreras", force: :cascade do |t|
@@ -54,11 +55,55 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_15_202243) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "colonias", force: :cascade do |t|
+    t.string "nombre_c"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "direcciones", force: :cascade do |t|
+    t.string "calle"
+    t.integer "numero_exterior"
+    t.integer "numero_interior"
+    t.string "colonia"
+    t.integer "municipio"
+    t.integer "estado"
+    t.integer "codigo_postal"
+    t.string "referencia"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "tipo_id"
+  end
+
+  create_table "direcciones_tipos", force: :cascade do |t|
+    t.string "tipo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "docentes", force: :cascade do |t|
     t.integer "user_id"
     t.string "nombre"
     t.string "apellido_p"
     t.string "apellido_m"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "especialidades", force: :cascade do |t|
+    t.string "nombre_especialidad"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "estados", force: :cascade do |t|
+    t.string "nombre_e"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "municipios", force: :cascade do |t|
+    t.string "nombre_m"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

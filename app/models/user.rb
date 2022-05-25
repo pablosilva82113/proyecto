@@ -4,5 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :Docente , class_name: 'Docente' , foreign_key: 'id'
-  has_many :Alumno , class_name: 'Alumno' , foreign_key: 'id'
+  has_many :Alumno , class_name: 'Alumno' , foreign_key: 'user_id'
 end

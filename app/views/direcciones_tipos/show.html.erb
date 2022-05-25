@@ -1,0 +1,46 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @direcciones_tipo %>
+<h2>Direcciones<%=@direcciones_tipo.Direcciones.count %> </h2>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Tipo</th>
+      <th>Calle</th>
+      <th>Numero exterior</th>
+      <th>Numero interior</th>
+      <th>Colonia</th>
+      <th>Municipio</th>
+      <th>Estado</th>
+      <th>Codigo postal</th>
+      <th>Referencia</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <% @direcciones_tipo.Direcciones.each do |d| %>
+    <tr>
+    <td><%= d[:id] %></td>
+      <td><%= @direcciones_tipo[:tipo] %></td>
+      <td><%= d[:calle] %></td>
+      <td><%= d[:numero_exterior] %></td>
+      <td><%= d[:numero_interior] %></td>
+      <td><%= d[:colonia] %></td>
+      <td><%= d[:municipio] %></td>
+      <td><%= d[:estado] %></td>
+      <td><%= d[:codigo_postal] %></td>
+      <td><%= d[:referencia] %></td>
+    
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div>
+  <%= link_to "Edit this direcciones tipo", edit_direcciones_tipo_path(@direcciones_tipo) %> |
+  <%= link_to "Back to direcciones tipos", direcciones_tipos_path %>
+
+  <%= button_to "Destroy this direcciones tipo", @direcciones_tipo, method: :delete %>
+</div>

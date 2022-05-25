@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Especialidades</h1>
+
+<div id="especialidades">
+  <% @especialidades.each do |especialidad| %>
+    <%= render especialidad %>
+    <p>
+      <%= link_to "Show this especialidad", especialidad %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New especialidad", new_especialidad_path %>

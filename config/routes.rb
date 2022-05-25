@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :colonias
+  resources :estados
+  resources :municipios
+  resources :especialidades
+  resources :direcciones_tipos
+  resources :direcciones
   resources :actividades
   get 'index/index'
   devise_for :users

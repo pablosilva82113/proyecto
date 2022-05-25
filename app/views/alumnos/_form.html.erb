@@ -10,11 +10,14 @@
       </ul>
     </div>
   <% end %>
-
+  <div>
+  <%= form.label :especialidad, style: "display: block" %>
+  <%= collection_select("especialidad",:especialidad_id, Especialidad.all.order("nombre_especialidad"), :id , :nombre_especialidad) %> 
+ </div>
   <div>
     <%= form.label :carrera_id, style: "display: block" %>
     
-    <%= collection_select("alumno" , :carrera_id, Carrera.all, :id, :siglas) %>
+    <%= collection_select("carrera" , :carrera_id, Carrera.all.order("carrera"), :id, :carrera) %>
     <!--
     <%= form.number_field :carrera_id %>
     -->
@@ -23,7 +26,7 @@
   <div>
     <%= form.label :user_id, style: "display: block" %>
     
-    <%= collection_select("alumno" , :user_id, User.all, :id,:email) %>
+    <%= collection_select("user" , :user_id, User.all.order("email"), :id,:email) %>
     <!--
     <%= form.number_field :user_id %>
       -->

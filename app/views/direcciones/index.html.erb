@@ -1,0 +1,38 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Direcciones</h1>
+<button type="button" class="btn btn-info"><%= link_to "New direccion", new_direccion_path %></button>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Calle</th>
+      <th>Numero exterior</th>
+      <th>Numero interior</th>
+      <th>Colonia</th>
+      <th>Municipio</th>
+      <th>Estado</th>
+      <th>Codigo postal</th>
+      <th>Referencia</th>
+      <th>Ver direccion</th>
+    
+    </tr>
+  </thead>
+  <tbody>
+    <% @direcciones.each do |d| %>
+    <tr>
+       <td><%= d.Tipo[:tipo] %></td>
+      <td><%= d[:calle] %></td>
+      <td><%= d[:numero_exterior] %></td>
+      <td><%= d[:numero_interior] %></td>
+      <td><%= d.Colonias[:nombre_c] %></td>
+      <td><%= d.Municipios[:nombre_m] %></td>
+      <td><%= d.Estados[:nombre_e] %></td>
+      <td><%= d[:codigo_postal] %></td>
+      <td><%= d[:referencia] %></td>
+     <td><button type="button" class="btn btn-info"> <%= link_to "Show this direccion", d %> </button></td>
+   
+
+    </tr>
+    <% end %>
+  </tbody>
